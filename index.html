@@ -36,7 +36,11 @@
     .nav-li:hover ion-icon, .nav-li:hover h4, .nav-li.active ion-icon, .nav-li.active h4  {color:#477ac4; text-shadow: 0 0 3px #477ac4;}
     .nav-li ion-icon {position: absolute; font-size: 40px; left:30px;}
     .nav-li h4 {position: relative; left: 86px; font-family: sans-serif; font-weight: bold; text-shadow: 0 0 3px white; visibility: visible;}
-  
+    .nav-li  span {width:6px; height:60px; background: white; box-shadow: 0 0 12px white; position: absolute;  visibility: hidden;}
+    .nav-li.active span, .nav-li:hover span { background:#477ac4; box-shadow: 0 0 10px  #477ac4; visibility: visible;}
+
+
+
 
 .nav2 {width:280px; height: 92px; background:#477ac4; box-shadow: 0 0 14px  #477ac4; position: relative; top: 10px; display: flex; align-items: center;}
 .nav2.active {width:100px;}
@@ -234,13 +238,13 @@
 
 <nav>
     <ul class="nav-ul">
-         <li class="nav-li active"><ion-icon name="home-outline"></ion-icon><h4>DASHBOARD</h4></li>
-         <li class="nav-li"><ion-icon name="people-outline"></ion-icon><h4>CUSTOMERS</h4></li>
-         <li class="nav-li"><ion-icon name="chatbox-ellipses-outline"></ion-icon><h4>MESSAGES</h4></li>
-         <li class="nav-li"><ion-icon name="help-outline"></ion-icon><h4>HELP</h4></li>
-         <li class="nav-li"><ion-icon name="settings-outline"></ion-icon><h4>SETTİNGS</h4></li>
-         <li class="nav-li"><ion-icon name="lock-closed-outline"></ion-icon><h4>PASSWORD</h4></li>
-         <li class="nav-li"><ion-icon name="log-out-outline"></ion-icon><h4>SİGN OUT</h4></li>
+         <li class="nav-li active"><ion-icon name="home-outline"></ion-icon><h4>DASHBOARD</h4><span></span></li>
+         <li class="nav-li"><ion-icon name="people-outline"></ion-icon><h4>CUSTOMERS</h4><span></span></li>
+         <li class="nav-li"><ion-icon name="chatbox-ellipses-outline"></ion-icon><h4>MESSAGES</h4><span></span></li>
+         <li class="nav-li"><ion-icon name="help-outline"></ion-icon><h4>HELP</h4><span></span></li>
+         <li class="nav-li"><ion-icon name="settings-outline"></ion-icon><h4>SETTİNGS</h4><span></span></li>
+         <li class="nav-li"><ion-icon name="lock-closed-outline"></ion-icon><h4>PASSWORD</h4><span></span></li>
+         <li class="nav-li"><ion-icon name="log-out-outline"></ion-icon><h4>SİGN OUT</h4><span></span></li>
         
     </ul>
 </nav>
