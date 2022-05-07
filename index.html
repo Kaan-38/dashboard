@@ -18,6 +18,13 @@
     .header-li div {width:330px; height: 40px; background: black; box-shadow: 0 0 16px black; border: 2px solid #477ac4; display: flex; justify-content: space-between; align-items: center;}
     .header-li input {width: 294px; height: 36px; background: black; color: white; border-style: none; outline: none; font-size:16px;}
     .header-li ion-icon {color: white; font-size:28px; position: relative; left:2px;}
+    .header-li span {width: 200px; height: 200px; background:#477ac4; box-shadow: 0 0 14px  #477ac4;  position: absolute; right:0px; z-index: 10; top: 80px; visibility:hidden; }
+.header-li span:after {content: '' ; width: 0; height: 0; border-width: 15px; border-style: solid; border-color:#477ac4 transparent transparent transparent; position: absolute; left: 78%; top: -15px;}
+.headerspan.active {visibility: visible;}
+.headerspan label {display: flex; align-items: center; margin-bottom: 13px; position: relative; top:3px;margin-right:10px;} 
+.headerspan label h4 {font-family: sans-serif; font-weight: bold; color: white; text-shadow: 0 0 3px white; position: relative; left:12px;}
+
+
 
     .kapsam {display: flex;}
     nav {width:280px; height:100%; position: relative; top:20px; background:#477ac4; box-shadow: 0 0 14px  #477ac4;}
@@ -110,8 +117,6 @@
 .container4-open ion-icon {transition: 0.6s;}
 .container4-open:hover {transform: scale(1.03);}
 
-
-
 @media only screen and (max-width:1500px) {
 
 .container-post2 span {font-size: 18px; margin-left:6px; margin-right:6px;}
@@ -147,7 +152,7 @@
   .container4 {width:50%; margin:10px;}
   .container-post2 span {font-size: 24px; margin-left: 10px; margin-right: 10px;}
 
-
+ 
   .container3 {width: 89%;  margin-left:50px; }
 
 
@@ -199,7 +204,15 @@
 <header>
     <li class="header-li"><h1>KAAN</h1></li>
     <li class="header-li"><div><ion-icon name="search"></ion-icon><input type="search" name=""></div></li>
-    <li class="header-li"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQGYTfDVuTekdw/profile-displayphoto-shrink_100_100/0/1646331015779?e=1657152000&v=beta&t=c7n6PqUwd8gz1F2bS9_1i-uvTHlw9JP8VPw_CojzU9c"></li>
+    <li class="header-li"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQGYTfDVuTekdw/profile-displayphoto-shrink_100_100/0/1646331015779?e=1657152000&v=beta&t=c7n6PqUwd8gz1F2bS9_1i-uvTHlw9JP8VPw_CojzU9c" class="photoheader">
+   <span class="headerspan">
+         <label><ion-icon name="person-outline"></ion-icon><h4>My Profile</h4></label>
+         <label><ion-icon name="chatbubble-ellipses-outline"></ion-icon><h4>Messages</h4></label>
+         <label><ion-icon name="notifications-outline"></ion-icon><h4>Notifications</h4></label>
+         <label><ion-icon name="settings-outline"></ion-icon><h4>Settings</h4></label>
+         <label><ion-icon name="log-out-outline"></ion-icon><h4>Logout</h4></label>
+        </span>
+    </li>
 </header>
 <div class="kapsam">
 <div>
@@ -337,6 +350,9 @@
 </script>
 
 <script type="text/javascript">
+
+    var photoheader = document.querySelector('.photoheader');
+    var headerspan = document.querySelector('.headerspan');
     const container4open = document.querySelector('.container4-open');
     const container4aç = document.querySelector('.container4');
     const nav = document.querySelector('nav');
@@ -346,6 +362,10 @@
     const container3 = document.querySelectorAll('.container3-left-li')
     const container4li = document.querySelectorAll('.container4-li');
     const navli = document.querySelectorAll('.nav-li');
+  photoheader.addEventListener('click',() =>{
+      headerspan.classList.toggle('active');
+    })
+
     function activeLink(){
         navli.forEach((item )=>
         item.classList.remove('active'));
@@ -385,6 +405,9 @@
     container4open.addEventListener('click', () =>{
         container4aç.classList.toggle('active');
     })
+    
 </script>
+
+
 </body>
 </html>
